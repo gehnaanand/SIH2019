@@ -1,0 +1,386 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Smart India Hackathon 2019
+  </title>
+  <style>
+
+	#logos
+	{
+		position:relative;
+		left:500px;
+	}
+</style>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="{% static 'img/logos/favicon.ico' type='image/x-icon' %}">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/scrolling-nav.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" id="navtxt">Smart India Hackathon 2019</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#ideas">Idea</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#tech">Tools</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="bg-primary text-white" id="header">
+    <div class="container text-center">
+      <h1><font size="10">Inconsistency Detection in Medical Annotations</font></h1>
+
+      <p class="lead"></p>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>About</h2>
+          <h1></h1>
+          <p class="lead">
+            Organization name:<b> 						ezDI</b>
+
+            </p>
+            <p class="lead">
+            Technology bucket: 			<b>Healthcare & Biomedical Devices</b>
+            </p>
+            <p class="lead">
+            Team name: 							  <b>TeamCoders6</b>
+            </p>
+            <p class="lead">
+            Team Leader Name:				  <b> Paras Narendranath</b>
+            </p>
+            <p class="lead">
+            Problem:			 <b>Inconsistency Detection in Medical Annotation</b>
+            </p>
+            <p class="lead">
+            Problem Code:							<b> RG1</b>
+            </p>
+            <p class="lead">
+            College Code: <b>1-3516083173</b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ideas" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Idea</h2>
+          <ul>
+            <li>Use Mesh topology to find similar terms in the corpus which are differently annotated(eg: Hypertension and High blood pressure
+are synonyms but could be annotated differently leaving inconsistency).</li>
+
+            <li>Terms in each document are mapped to the entry terms in MeSH, which are further then mapped into MeSH descriptors to remove
+synonyms.</li>
+
+            <li>Instead of searching all entry terms in the MeSH against each document, we select 1-gram to 5-gram words as the candidates of MeSH Entry terms.</li>
+
+            <li>Implement the Watson Natural Language Understanding API, to extract Concepts from the entities(eg: High blood pressure has Hypertension as concept). Grouping similar entities using MeSH and Watson Natural Language Understanding API based on their semantic similarity.</li>
+            <li>Finding out weight discrepancy to extract the extent of inconsistency for each grouped entity i.e. difference between the number of times an expression M occurs is annotated minus the number of times M occurs is not annotated. </li>
+            <li>More is the weight discrepancy lesser is the extent of inconsistency</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <style>
+
+  #navtxt:hover
+  {
+    filter: brightness(50%);
+  }
+  #logoezdi
+  {
+    position:relative;
+    bottom:1800px;
+    right:350px;
+  }
+  #logoezdi:hover
+  {
+    filter: brightness(50%);
+
+  }
+
+  </style>
+
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Services : </h2>
+
+          <!--
+          THE EZDI LOGO HAS BEEN USED HERE FOR THE HEADER FOR BETTER PLACEMENT : DO NOT CHANGE THE POSITION
+          -->
+          <a href="https://www.ezdi.com/" target="_blank">
+          <img  align = "center " height="200" width="200"  id="logoezdi" class="mx-auto rounded-circle" src="static/img/team/ezdi-2.png" alt="Image Here"/>
+          </a>
+
+          <div id="special" style = "position:relative;">
+          <button onclick="location.href='/stats'" type="button" class="btn btn-primary btn-lg">
+            See Statistics
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section  id="contact" class="bg-light">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Our Team</h2>
+          <h3 class="section-subheading text-muted">BMS College Of Engineering</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img height="250" width="250" class="mx-auto rounded-circle" src="static/img/team/p2.png" alt="Image Here">
+            <h4 style = "position:relative; left:20px ;">Paras Narendranath</h4>
+            <p style = "position:relative; left:70px ;" class="text-muted">Team Leader</p>
+
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img height="250" width="250" class="mx-auto rounded-circle" src="static/img/team/2.jpeg" alt="">
+            <h4  style = "position:relative; left:40px ;" >Anurag Pachauri</h4>
+            <p  style = "position:relative; left:100px ;" class="text-muted">Member</p>
+
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img height="250" width="250" class="mx-auto rounded-circle" src="static/img/team/41.png" alt="">
+            <h4 style = "position:relative; left:50px ;" >Gehna Anand</h4>
+            <p  style = "position:relative; left:100px ;" class="text-muted">Member</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img style = "position:relative; left:10px ;" height="250" width="250" class="mx-auto rounded-circle" src="static/img/team/51.png" alt="">
+            <h4 style = "position:relative; left:40px ;" >Dhanaraj V Kidiyoor</h4>
+            <p  style = "position:relative; left:100px ;" class="text-muted">Member</p>
+
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img style = "position:relative; left:10px ;" height="250" width="250" class="mx-auto rounded-circle" src="static/img/team/rv4.png" alt="">
+            <h4 style = "position:relative; left:80px ;" >Anirudh RV</h4>
+            <p  style = "position:relative; left:100px ;" class="text-muted">Member</p>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img style = "position:relative; left:10px ;" height="250" width="250" class="mx-auto rounded-circle" src="static/img/team/m6.png" alt="">
+            <h4 style = "position:relative; left:100px ;" >Myna P</h4>
+            <p  style = "position:relative; left:112px ;" class="text-muted">Member</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="large text-muted"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <style>
+
+  #heading
+  {
+    position:relative;
+    text-align:center;
+  }
+
+  #dj
+  {
+    position:relative;
+    left:150px;
+  }
+
+  #docker
+  {
+    position:relative;
+    left:250px;
+  }
+
+  #cloud
+  {
+    position:relative;
+    left:350px;
+  }
+
+  #watson
+  {
+    position:relative;
+    left:450px;
+  }
+
+  #pubmed
+  {
+    position:relative;
+    left:150px;
+    top:50px;
+  }
+
+  #gensim
+  {
+    position:relative;
+    left:250px;
+    top:50px;
+  }
+
+  #nltk
+  {
+    position:relative;
+    left:300px;
+    top:50px;
+  }
+
+
+  .tools:hover
+  {
+    filter: brightness(50%);
+
+  }
+
+  </style>
+
+  <section id="tech"><p>
+  <div class="col-lg-8 mx-auto">
+         <p>
+           <h2 id="heading">Software Tools Used
+		         </h2>
+		     </p>
+   </div>
+
+
+     <a href="https://www.djangoproject.com/" target="_blank">
+     <img class="tools" align = "center " height="200" width="200"  id="dj" src="static/img/logos/Dj.png" alt="Image Here"/>
+     </a>
+
+     <a href="https://www.docker.com/" target="_blank">
+     <img class="tools" align = "center " height="200" width="200"  id="docker" src="static/img/logos/docker.png" alt="Image Here"/>
+     </a>
+
+     <a href="https://cloud.google.com" target="_blank">
+     <img class="tools" align = "center " height="200" width="200"  id="cloud" src="static/img/logos/cloud.png" alt="Image Here"/>
+     </a>
+
+     <a href="https://www.ibm.com/watson" target="_blank">
+     <img class="tools" align = "center " height="200" width="200"  id="watson" src="static/img/logos/watson.png" alt="Image Here"/>
+     </a>
+
+
+
+   </br>
+   <a href="https://www.ncbi.nlm.nih.gov/pubmed/" target="_blank">
+   <img class="tools" align = "center " height="200" width="200"  id="pubmed" src="static/img/logos/pubmed2.jpeg" alt="Image Here"/>
+   </a>
+
+   <a href="https://radimrehurek.com/gensim/" target="_blank">
+   <img class="tools" align = "center " height="100" width="250"  id="gensim" src="static/img/logos/gensim2.png" alt="Image Here"/>
+   </a>
+
+   <a href="https://www.nltk.org/" target="_blank">
+   <img class="tools" align = "center " height="100" width="250"  id="nltk" src="static/img/logos/nlkt2.jpg" alt="Image Here"/>
+   </a>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Website by : TeamCoders6</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js'}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js'}"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="{% static 'js/scrolling-nav.js'}"></script>
+
+</body>
+
+</html>
