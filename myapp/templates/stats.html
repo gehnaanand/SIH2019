@@ -24,6 +24,11 @@
   <!-- Custom styles for this template -->
   <link href="{% static 'css/scrolling-nav.css' %}" rel="stylesheet">
 
+<script type="javascript">
+      function pattern_list(){
+      alert("Hello");
+      }
+</script>
 </head>
 
 <body id="page-top">
@@ -152,15 +157,25 @@
                     U p l o a d
                   </button>
               </form>
+              <p class="lead" id="drag"> Drag a file or click here to upload a file</p>
+              <img id="downloadimg" height="70" width="70"src="https://image.flaticon.com/icons/svg/57/57849.svg" alt="img"/>
 
                   <p class="lead">
                   </br>
-                        NOTE : </br> {{Data}}
-                    </p>
+                        NOTE : </br>
+                        </br>
+
+                        {% for key,value in Dict.items %}
+
+                            <li onclick="pattern_list()">{{key}}</li>
+                            {% for i in value %}
+                              <li>{{i}}</li>
+                            {% endfor %}
+                  {% endfor %}
+
+                  </p>
           {% endif %}
 
-          <p class="lead" id="drag"> Drag a file or click here to upload a file</p>
-          <img id="downloadimg" height="70" width="70"src="https://image.flaticon.com/icons/svg/57/57849.svg" alt="img"/>
 
         </div>
       </div>

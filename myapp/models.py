@@ -11,4 +11,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
-        
+
+class Person(models.Model):
+    name = models.CharField(max_length=50)

@@ -1,6 +1,7 @@
 from django.shortcuts import render , render_to_response
 import csv, io
 from django.contrib import messages
+from .table import send
 from django.contrib.auth.decorators import permission_required
 from .models import Contact
 
@@ -48,7 +49,13 @@ def contact_upload(request):
     if not csv_file.name.endswith('.csv'):
         messages.error(request, "This file is not a .csv file")
 
-    data_set = csv_file.read().decode('utf-8')
-    context = {'Data' :data_set}
+    """data_set = csv_file.read().decode('utf-8')"""
+    data_set = send(csv_file)
+    a=[]
+    d={}
+    for data in data_set:
+        d[data[0]]=data[1:]
+        a.append(data[0])
+    context = {'Names' : a, 'Data' : data_set,'Dict':d}
 
     return render(request, template, context)
