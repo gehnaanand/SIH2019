@@ -50,7 +50,28 @@ def load_entity_sets(m):
             
     #entity = pd.DataFrame(entity)
     return entity
-        
+
+def get_sentence_ids(path):
+    """
+    get list of sentence ids for each
+    tagged annotation terms/relationships
+    """
+    
+    entity_to_sentid = {}
+    df = pd.read_csv(path)
+    for i in range(len(df)):
+        j = 2
+        term = df.at[i, str(j)]
+        print(term)
+        if term != '\r\n' and term != '':
+            if term in entity_to_sentid:
+                entity_to_sentid[term].append(df.at[i, '0'])
+            else:
+                entity_to_sentid[term] = [df.at[i, '0']]
+        j += 1
+    
+    return entity_to_sentid
+
                 
 if __name__ == "__main__":
     
@@ -59,14 +80,16 @@ if __name__ == "__main__":
         for row in infile:
             text = row.split('\t')
             df.append(text)
-            df = pd.DataFrame(df)
+        df = pd.DataFrame(df)
 
     df = df.apply(lambda x: x.astype(str).str.lower())
     df = df[df[2] != '\n'].reset_index(drop=True)
     df = df.apply(lambda x: x.replace('none',''))
     df.to_csv('annotated_lower_removed.csv', index=False)
-    majority = generate_majority_dict('annotated_lower_removed.csv')
+    path = 'annotated_lower_removed.csv'
+    majority = generate_majority_dict()
     entities = load_entity_sets(majority)
+    entities_with_sentid = get_sentence_ids(path)
             
     
     
